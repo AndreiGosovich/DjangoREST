@@ -17,6 +17,10 @@ class UserModel(models.Model):
         },
     )
 
+    def __str__(self):
+        return self.username
+    
+
     class Meta:
         verbose_name = _("user")
         verbose_name_plural = _("users")
