@@ -30,6 +30,7 @@ class ToDo(models.Model):
         auto_now=True, verbose_name="Edited", editable=False
     )
     user = models.ForeignKey('userapp.UserModel', on_delete=models.CASCADE)
+    closed = models.BooleanField(default=False, verbose_name='Closed')
 
     class Meta:
         verbose_name = _("ToDo")

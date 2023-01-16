@@ -5,7 +5,8 @@ from userapp.views import UserModelViewSet
 from todoapp.views import ProjectViewSet, ToDoViewSet
 
 router = DefaultRouter()
-router.register('users', UserModelViewSet)
+# router.register('users', UserModelViewSet)
+router.register('users', UserModelViewSet, basename='users')
 router.register('projects', ProjectViewSet)
 router.register('todo', ToDoViewSet)
 

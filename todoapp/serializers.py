@@ -7,7 +7,7 @@ class ProjectModelSerializer(serializers.HyperlinkedModelSerializer):
 
 	class Meta:
 		model = Project
-		fields = ['url', 'project_name', 'repo_link', 'users']
+		fields = ['id', 'url', 'project_name', 'repo_link', 'users']
 
 
 class ToDoModelSerializer(serializers.HyperlinkedModelSerializer):
@@ -16,4 +16,4 @@ class ToDoModelSerializer(serializers.HyperlinkedModelSerializer):
 
 	class Meta:
 		model = ToDo
-		fields = ['url', 'project', 'description', 'created', 'updated', 'user']
+		fields = ['id', 'url', 'project', 'description', 'created', 'updated', 'user', 'closed']
