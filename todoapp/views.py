@@ -8,6 +8,8 @@ from .filters import ProjectFilter, ToDoFilter
 from rest_framework.response import Response
 from rest_framework import status
 
+# from rest_framework.permissions import AllowAny
+
 class ProjectLimitOffsetPagination(LimitOffsetPagination):
 	defaul_limit = 10
 
@@ -18,6 +20,7 @@ class ToDoLimitOffsetPagination(LimitOffsetPagination):
 
 class ProjectViewSet(ModelViewSet):
 	queryset = Project.objects.all()
+	# permission_classes = [AllowAny]
 	serializer_class = ProjectModelSerializer
 	pagination_class = ProjectLimitOffsetPagination
 	filterset_class = ProjectFilter
