@@ -1,6 +1,6 @@
 from rest_framework.viewsets import ModelViewSet
 from .models import Project, ToDo
-from .serializers import ProjectModelSerializer, ToDoModelSerializer
+from .serializers import ProjectModelSerializer, ToDoModelSerializer,  ToDoModelSerializerBase
 
 from rest_framework.pagination import LimitOffsetPagination
 from .filters import ProjectFilter, ToDoFilter
@@ -40,3 +40,8 @@ class ToDoViewSet(ModelViewSet):
 		instance.save()
 		serializer = self.get_serializer(instance)
 		return Response(serializer.data, status=status.HTTP_200_OK)
+	
+	def get_serializer_class(self):
+		if self.request.method in ['GET']:
+			return ToDoModelSerializer
+		return ToDoModelSerializerBase
