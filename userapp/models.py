@@ -9,6 +9,8 @@ class UserModel(models.Model):
     username = models.CharField(_("username"), max_length=150)
     first_name = models.CharField(_("first name"), max_length=150, blank=True)
     last_name = models.CharField(_("last name"), max_length=150, blank=True)
+    is_superuser = models.BooleanField(_('Superuser'), default=False)
+    is_staff = models.BooleanField(_('Staff'), default=False)
     email = models.CharField(
         _("email address"),
         max_length=256,
