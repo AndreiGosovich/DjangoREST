@@ -10,6 +10,8 @@ from todoapp.views import ProjectViewSet, ToDoViewSet
 from django.views.generic import TemplateView
 from rest_framework.schemas import get_schema_view as get_schema_view_open_api
 
+from graphene_django.views import GraphQLView
+
 router = DefaultRouter()
 # router.register('users', UserModelViewSet)
 router.register('users', UserModelViewSet, basename='users')
@@ -67,5 +69,7 @@ urlpatterns = [
         template_name='redoc.html',
         extra_context={'schema_url_redoc':'openapi-schema'}
     ), name='redoc'),
+    
+	path("graphql/", GraphQLView.as_view(graphiql=True)),
 ]
 
