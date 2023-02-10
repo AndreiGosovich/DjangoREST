@@ -7,7 +7,7 @@ class Menu extends React.Component {
 	}
     
     render() {
-        console.log(this.props.is_authenticated)
+        // console.log(this.props.is_authenticated)
         return (
             <menu>
                 <ul>
@@ -16,7 +16,7 @@ class Menu extends React.Component {
                     </li>
 
                     <li>
-                        <Link to='/todos'>ToTos</Link>
+                        <Link to='/todos'>ToDos</Link>
                     </li>
 
                     <li>

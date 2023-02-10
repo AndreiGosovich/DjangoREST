@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Project, ToDo
+from userapp.serializers import UserModelSerializer
 
 
 class ProjectModelSerializer(serializers.ModelSerializer):
@@ -11,7 +12,7 @@ class ProjectModelSerializer(serializers.ModelSerializer):
 
 
 class ToDoModelSerializer(serializers.ModelSerializer):
-	user = serializers.StringRelatedField()
+	user = UserModelSerializer()
 	project = ProjectModelSerializer()
 
 	class Meta:
