@@ -12,7 +12,7 @@ const ToDoItem = ({item, deleteToDo}) => {
             <td>{item.user.username}</td>
 			<td>{String(item.closed)}</td>
 			<td><button onClick={()=>deleteToDo(item.id)}
-			type='button'>Удалить</button></td>
+			type='button' className="btn btn-outline-danger">Удалить</button></td>
 		</tr>
 	)
 } 
@@ -31,14 +31,17 @@ const ToDoList = ({items, deleteToDo}) => {
 
 	return (
 		<div>
-			<label for='search'>Название проекта</label>
-				<input type='text' name='search' id='search'>
+			<div className="input-group mb-3">
+				<label for='search' className="input-group-text" id="inputGroup-sizing-default">Название проекта</label>
+				<input type='text' className="form-control" name='search' id='search'>
 				</input>
-			{<button type="button" onClick={searchEvent}>
-				Найти
-			</button>}
+			
+				<button type="button" className="btn btn-light" onClick={searchEvent}>
+					Найти
+				</button>
+			</div>
 
-			<table>
+			<table className='table table-striped'>
 				<tbody>
 				<tr>
 					<th>ID</th>

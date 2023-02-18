@@ -10,20 +10,20 @@ class Menu extends React.Component {
         // console.log(this.props.is_authenticated)
         return (
             <menu>
-                <ul>
-                    <li>
+                <ul className='menu list-group-flush'>
+                    <li className='list-group-item'>
                         <Link to='/'>Projects</Link>
                     </li>
 
-                    <li>
+                    <li className='list-group-item'>
                         <Link to='/todos'>ToDos</Link>
                     </li>
 
-                    <li>
+                    <li className='list-group-item'>
                         <Link to='/users'>Users</Link>
                     </li>
 
-                    <li>
+                    <li className='list-group-item'>
                         {
                             
                             this.props.is_authenticated

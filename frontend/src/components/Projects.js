@@ -9,7 +9,7 @@ const ProjectItem = ({item, deleteProject}) => {
 			<td>{item.repoLink}</td>
             <td>{item.users}</td>
 			<td><button onClick={()=>deleteProject(item.id)}
-			type='button'>Удалить</button></td>
+			type='button' className="btn btn-outline-danger">Удалить</button></td>
 		</tr>
 	)
 }
@@ -28,14 +28,17 @@ const ProjectList = ({items, deleteProject}) => {
 
 	return (
 		<div>
-			<label for='search'>Название проекта</label>
-				<input type='text' name='search' id='search'>
+			<div className="input-group mb-3">
+				<label for='search' className="input-group-text" id="inputGroup-sizing-default">Название проекта</label>
+				<input type='text' className="form-control" name='search' id='search'>
 				</input>
-			{<button type="button" onClick={searchEvent}>
-				Найти
-			</button>}		
+			
+				<button type="button" className="btn btn-light" onClick={searchEvent}>
+					Найти
+				</button>
+			</div>	
 		
-			<table>
+			<table className='table table-striped'>
 				<tbody>
 				<tr>
 					<th>ID</th>
@@ -47,7 +50,7 @@ const ProjectList = ({items, deleteProject}) => {
 				{items.map((item) => <ProjectItem item={item} deleteProject={deleteProject} />)}
 				</tbody>
 			</table>
-			<Link to='/project/create'>Создать проект</Link>
+			<Link to='/projects/create'>Создать проект</Link>
 		</div>
 	)
 } 
