@@ -1,0 +1,1 @@
+[{"model": "todoapp.project", "pk": 1, "fields": {"project_name": "First", "repo_link": "", "users": [1, 4]}}, {"model": "todoapp.project", "pk": 2, "fields": {"project_name": "Second", "repo_link": "no repo", "users": [2]}}, {"model": "todoapp.project", "pk": 6, "fields": {"project_name": "Ещё один проект", "repo_link": "нету", "users": []}}]
